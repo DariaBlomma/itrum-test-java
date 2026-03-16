@@ -1,5 +1,6 @@
 package com.wallet.itrumtestjava.controllers;
 
+import com.wallet.itrumtestjava.exception.InvalidRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ public class WalletController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public int getBalance() {
-        return 2;
+        throw new InvalidRequestException("Invalid request error message");
+        //return 2;
     }
 }
