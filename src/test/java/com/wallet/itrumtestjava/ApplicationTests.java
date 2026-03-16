@@ -1,4 +1,4 @@
-package com.wallet.IntrumTestJava;
+package com.wallet.itrumtestjava;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

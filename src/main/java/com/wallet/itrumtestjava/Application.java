@@ -1,4 +1,4 @@
-package com.wallet.IntrumTestJava;
+package com.wallet.itrumtestjava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
