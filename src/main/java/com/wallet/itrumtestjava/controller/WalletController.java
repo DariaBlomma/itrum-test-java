@@ -1,4 +1,4 @@
-package com.wallet.itrumtestjava.controllers;
+package com.wallet.itrumtestjava.controller;
 
 import com.wallet.itrumtestjava.exception.InvalidRequestException;
 import org.springframework.http.HttpStatus;
