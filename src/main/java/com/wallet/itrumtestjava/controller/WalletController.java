@@ -1,19 +1,22 @@
 package com.wallet.itrumtestjava.controller;
 
-import com.wallet.itrumtestjava.exception.InvalidRequestException;
+import com.wallet.itrumtestjava.dto.WalletBalanceResponse;
+import com.wallet.itrumtestjava.service.WalletService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/wallets")
+@RequiredArgsConstructor
 public class WalletController {
-    @GetMapping
+    private final WalletService walletService;
+
+    @GetMapping("/{wallet_uuid}")
     @ResponseStatus(HttpStatus.OK)
-    public int getBalance() {
-        throw new InvalidRequestException("Invalid request error message");
-        //return 2;
+    public WalletBalanceResponse getBalance(@PathVariable("wallet_uuid") UUID walletUuid) {
+        return walletService.getBalance(walletUuid);
     }
 }
