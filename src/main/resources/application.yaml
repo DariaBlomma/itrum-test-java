@@ -6,6 +6,10 @@ spring:
     username: walletuser
     password: walletpass
     driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 5000
+      leak-detection-threshold: 10000
+      maximum-pool-size: 50
   jpa:
     open-in-view: false
     hibernate:

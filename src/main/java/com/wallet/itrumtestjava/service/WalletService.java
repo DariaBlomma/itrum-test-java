@@ -7,7 +7,7 @@ import com.wallet.itrumtestjava.exceptions.InsufficientFundsException;
 import com.wallet.itrumtestjava.exceptions.ResourceNotFoundException;
 import com.wallet.itrumtestjava.mapper.WalletMapper;
 import com.wallet.itrumtestjava.repository.WalletRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
@@ -26,7 +26,7 @@ public class WalletService {
         return new WalletBalanceResponse(wallet.getId(), wallet.getBalance());
     }
 
-    @Transactional
+    @Transactional(timeout = 5)
     public WalletBalanceResponse updateBalance(WalletUpdateBalanceRequest request) {
         UUID id = request.getWalletUuid();
         Wallet wallet = walletRepository
