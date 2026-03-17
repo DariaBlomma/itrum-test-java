@@ -1,4 +1,4 @@
-package com.wallet.itrumtestjava.exception;
+package com.wallet.itrumtestjava.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

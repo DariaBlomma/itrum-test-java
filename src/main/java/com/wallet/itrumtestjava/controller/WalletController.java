@@ -1,7 +1,9 @@
 package com.wallet.itrumtestjava.controller;
 
 import com.wallet.itrumtestjava.dto.WalletBalanceResponse;
+import com.wallet.itrumtestjava.dto.WalletUpdateBalanceRequest;
 import com.wallet.itrumtestjava.service.WalletService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,5 +20,11 @@ public class WalletController {
     @ResponseStatus(HttpStatus.OK)
     public WalletBalanceResponse getBalance(@PathVariable("wallet_uuid") UUID walletUuid) {
         return walletService.getBalance(walletUuid);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public WalletBalanceResponse updateBalance(@Valid @RequestBody WalletUpdateBalanceRequest request) {
+        return walletService.updateBalance(request);
     }
 }

@@ -1,4 +1,4 @@
-package com.wallet.itrumtestjava.exception;
+package com.wallet.itrumtestjava.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

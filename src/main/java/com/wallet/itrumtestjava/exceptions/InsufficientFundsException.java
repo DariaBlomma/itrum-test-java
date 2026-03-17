@@ -1,11 +1,11 @@
-package com.wallet.itrumtestjava.exception;
+package com.wallet.itrumtestjava.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class InvalidRequestException extends RuntimeException {
-    public InvalidRequestException(String message) {
+public class InsufficientFundsException extends RuntimeException {
+    public InsufficientFundsException(String message) {
         super(message);
     }
 }
