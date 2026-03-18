@@ -2,9 +2,9 @@ spring:
   application:
     name: wallet.app
   datasource:
-    url: jdbc:postgresql://localhost:5434/walletdb
-    username: walletuser
-    password: walletpass
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql}
+    username: ${SPRING_DATASOURCE_USERNAME:walletuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:walletpass}
     driver-class-name: org.postgresql.Driver
     hikari:
       connection-timeout: 5000
