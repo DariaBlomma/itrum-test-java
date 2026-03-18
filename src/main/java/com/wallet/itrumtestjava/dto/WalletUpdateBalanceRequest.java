@@ -4,6 +4,7 @@ import com.wallet.itrumtestjava.enums.WalletOperationType;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 @Data
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class WalletUpdateBalanceRequest {
     @NotNull(message = "Wallet id is required")
     private UUID walletUuid;
